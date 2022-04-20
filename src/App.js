@@ -93,7 +93,7 @@ class App extends Component {
           },
         });
 
-        // trigger data load from Firebase to get Epic/Ikon data
+        // trigger data load from Firebase to get data
         const skiFlags = firebase.database().ref();
         skiFlags.on("value", (snapshot) => {
           let currentResorts = operatingDownhillResorts;

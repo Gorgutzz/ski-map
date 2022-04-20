@@ -31,14 +31,6 @@ export function shouldShowResort(
     }
   }
 
-  if (passFilter !== "all" && passFilter === "epic" && !resort.isEpic) {
-    shouldIncludeResort = false;
-  }
-
-  if (passFilter !== "all" && passFilter === "ikon" && !resort.isIkon) {
-    shouldIncludeResort = false;
-  }
-
   return shouldIncludeResort;
 }
 

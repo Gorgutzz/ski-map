@@ -6,20 +6,20 @@ import {
   getRunDistance,
 } from './utils/SkiMapTooltipUtils'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { 
-  faCircle, 
-  faSquare, 
-  faSquareFull, 
-  faQuestionCircle, 
-  faMountain, 
-  faTram, 
-  faSkiing 
+import {
+  faCircle,
+  faSquare,
+  faSquareFull,
+  faQuestionCircle,
+  faMountain,
+  faTram,
+  faSkiing
 } from '@fortawesome/free-solid-svg-icons'
 import { faCircle as farCircle } from '@fortawesome/free-regular-svg-icons'
 
 export default class SkiMapTooltip extends Component {
 
-  
+
 
   render() {
     let resort = this.props.resort;
@@ -28,24 +28,8 @@ export default class SkiMapTooltip extends Component {
 
     return resort ? (
       <div className="resortCard">
-        {resort.isEpic && 
-          <img
-            src="epic.png"
-            alt="Epic Pass"
-            title="Included in Epic Pass"
-            style={{ float: 'right', width: '50px' }}
-          />
-        }
-        {resort.isIkon && 
-          <img
-            src="ikon.png"
-            alt="Ikon Pass"
-            title="Included in Ikon Pass"
-            style={{ float: 'right', width: '50px' }}
-          />
-        } 
         <b>{resort.name}</b><br />
-        {resort.website && 
+        {resort.website &&
           <div>
             <a href={resort.website} rel="noopener noreferrer" target="_blank">Visit web site</a>
           </div>
@@ -84,12 +68,12 @@ export default class SkiMapTooltip extends Component {
               <span className="popover-stat">{resort.runs}</span>
               <span className="popover-suffix popover-suffix-up">
                 Runs
-                {resort.totalRunKm && verticalSuffix === "m" && 
+                {resort.totalRunKm && verticalSuffix === "m" &&
                   <span> covering <b>{numberFormat(resort.totalRunKm)}</b> km<br /></span>
-                } 
-                {resort.totalRunKm && verticalSuffix !== "m" && 
+                }
+                {resort.totalRunKm && verticalSuffix !== "m" &&
                   <span> covering <b>{numberFormat(resort.totalRunKm * 0.621371)}</b> mi<br /></span>
-                } 
+                }
               </span>
               <table>
                 <thead>
